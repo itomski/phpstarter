@@ -1,30 +1,37 @@
 <?php
 
-// MVC - Model, View, Controller
-
-// Datenbasis - Model
-$pages = [];
-$pages['home'] = ['title' => 'Startseite', 
-                    'headline' => 'Herzlich Willkommen',
-                    'content' => 'Bla bla bla bla bla'];
-
-$pages['products'] = ['title' => 'Produkte', 
-                    'headline' => 'Das sind unsere Produkte',
-                    'content' => 'Bla bla...'];
-
-$pages['contact'] = ['title' => 'Kontakt', 
-                    'headline' => 'So erreichen Sie uns',
-                    'content' => 'Schreiben Sie uns einfach eine E-Mail...'];
+require_once 'model/data.php';
 
 // Controller                    
-$action = $_GET['a']; // Unsave
+//$action = $_GET['a']; // Nicht save
+$action = filter_input(INPUT_GET, 'a'); // Save
+
+$tpl = 'standard';
+
+// $_GET, $_POST, $_REQUEST werden von PHP automatisch bereitgestellt und befüllt
+// $_GET enthält alle Parameter, die an der URL hängen
+// $_POST enthält alles, das mit der POST-Methode verschickt wurde (z.B. Formulardaten)
+// $_REQUEST enthält alles auf $_GET und $_POST
+// print_r($_GET);
+
+// print_r($_POST);
+
+// print_r($_REQUEST);
+
+// Controller: Verbindet die passenden Daten mit der passenden View
+
 switch($action) {
     case 'products':
         $page = $pages['products'];
         break;
 
+    case 'submit':
+        $page = $pages['submit'];
+        break;    
+
     case 'contact':
         $page = $pages['contact'];
+        $tpl = 'contact';
         break;
 
     default:
@@ -32,30 +39,4 @@ switch($action) {
 }
 
 // View
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $page['title'] ?></title>
-</head>
-<body>
-
-    <nav>
-        <ul>
-            <li><a href="pagetest.php">Startseite</a></li>
-            <li><a href="pagetest.php?a=products">Produkte</a></li>
-            <li><a href="pagetest.php?a=contact">Kontakt</a></li>
-        </ul>
-    </nav>
-
-    <hr>
-
-    <main>
-        <h1><?= $page['headline'] ?></h1>
-        <?= $page['content'] ?>
-    </main>
-    
-</body>
-</html>
+include 'views/'.$tpl.'.php'; // Bindet das Template ein
