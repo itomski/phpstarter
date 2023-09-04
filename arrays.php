@@ -31,6 +31,20 @@ $personen[] = ['vorname' => 'Bruce', 'nachname' => 'Banner', 'alter' => 28, 'woh
 $personen[] = ['vorname' => 'Carol', 'nachname' => 'Danvers', 'alter' => 32, 'wohnort' => 'Californien'];
 $personen[] = ['vorname' => 'Tony', 'nachname' => 'Stark', 'alter' => 32, 'wohnort' => 'Californien'];
 
+/*
+// Array
+    // 1. Dim
+    0 =>
+        // 2. Dim
+        'vorname' => Peter 
+        'nachname' => Parker 
+        'alter' => 32 
+        'wohnort' => New York 
+    1 => ...
+    2 => ...
+*/
+
+
 // $personen ist eine Sammlung von Personen
 
 print_r($personen);
