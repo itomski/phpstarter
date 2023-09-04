@@ -3,7 +3,14 @@
 require_once 'model/data.php';
 
 // Controller                    
-//$action = $_GET['a']; // Nicht save
+// $action = $_GET['a']; // Nicht save
+// liefert eine Error, wenn 'a' nicht im Array vorhanden
+
+// INPUT_GET = Liest $_GET
+// INPUT_POST = Liest $_POST
+// INPUT_REQUEST = Liest $_REQUEST
+// 'a' ist ein Key in dem jeweiligen Array z.B. $_GET['a']
+// liefert eine null, wenn 'a' nicht im Array vorhanden
 $action = filter_input(INPUT_GET, 'a'); // Save
 
 $tpl = 'standard';
