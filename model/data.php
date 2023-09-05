@@ -1,7 +1,11 @@
 <?php
 // MVC - Model, View, Controller
 
+// define('FILE', 'pages.json'); // Konstante - Alte Schreibweise
+const FILE = 'pages.json'; // Konstante - Neue Schreibweise
+
 // Datenbasis - Model
+/*
 $pages = [];
 $pages['home'] = ['title' => 'Startseite', 
                     'headline' => 'Herzlich Willkommen',
@@ -18,3 +22,11 @@ $pages['contact'] = ['title' => 'Kontakt',
 $pages['submit'] = ['title' => 'Danke', 
                     'headline' => 'Danke für Ihre Nachricht',
                     'content' => 'Wir werden uns nicht sooo schnell melden.'];
+
+// JSON = Java Script Object Notation
+
+file_put_contents(FILE, json_encode($pages));
+*/
+
+// Liest das JSON ein und wandelt es in ein assoziatives Array um
+$pages = json_decode(file_get_contents(FILE), true);
