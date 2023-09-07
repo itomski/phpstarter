@@ -26,3 +26,6 @@ echo substr($str, -5)."\n"; // Beginnt am Ande und zählt 5 Zeichen zurück
 echo substr($str, -5, 2)."\n"; // Beginnt am Ande und zählt 5 Zeichen zurück, gibt 2 Zeichen aus
 
 echo nl2br("Hallo \n... \n...");
+
+printf("\nMein Name ist %s", 'Peter'); // String wird geprintet
+$str = sprintf("\nMein Name ist %s", 'Peter');
