@@ -12,7 +12,6 @@ class BlogPostService {
         ['title' => 'Home', 'headline' => 'Herzlich Willkommen', 'content' => 'Wir freuen uns über Ihner Besuch']
     ];
 
-
     // READ
     function findAll() {
         //$posts = []; // Eine Lokale Varible - gehört der Methode
@@ -45,5 +44,4 @@ class BlogPostService {
 
     }
     */
-
 }
