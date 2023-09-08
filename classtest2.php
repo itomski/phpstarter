@@ -14,8 +14,9 @@ class Book {
         return $this->isbn;
     }
 
-    function setIsbn(string $isbn) :void {
+    function setIsbn(string $isbn) : self {
         $this->isbn = $isbn; // lokale Variable isbn wird in die Instanzvariable $this->isbn geschrieben
+        return $this;
     }
 
     public function isEbook() {
@@ -86,6 +87,13 @@ echo $b1->title;
 // Eigenschaft ist NICHT sichtbar, da sie privat ist
 // $b1->isbn = '2345-6789-101112'; // Error
 $b1->setIsbn('5679-221518-1234');
+$b1->setAuthor('Bruce Banner');
+$b1->setEbook(true);
+
+$b1->setIsbn('5679-221518-1234') // Setter mit Objektchaining
+    ->setAuthor('Bruce Banner')
+    ->setEbook(true);
+
 echo $b1->getIsbn();
 
 // Eigenschaft ist NICHT sichtbar, da sie protected ist
