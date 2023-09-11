@@ -14,16 +14,18 @@ $options = [
     PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true
 ];
 
-function saveUser(PDO $dbh, User $user) {
-    $sql = 'INSERT INTO users (id, firstname, lastname, location) VALUES(NULL, ?, ?, ?)';
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute([$user->getFirstname(), $user->getLastname(), $user->getLocation()]);
-}
-
 try {
     // Verbindung zu DB aufbauen
     $dbh = new PDO($dsn, 'root', 'root', $options);
 
+    $mapper = new UserMapper($dbh);
+    $results = $mapper->findAll();
+
+    $peter = $mapper->findById(1);
+
+    $mapper->delete($peter);
+
+    /*
     $sql = 'SELECT * FROM users';
     $stmt = $dbh->query($sql); // Anfrage abschicken
 
@@ -31,24 +33,26 @@ try {
     $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
 
     $results = $stmt->fetchAll(); // Ergebnisse abholen
+    */
 
-    debug($results);
+    //debug($results);
 
+    /*
     foreach($results as $user) {
         echo $user."\n"; // Verwendet automatisch die __toString-Methode
     }
-
+    */
 
     $user = new User();
     $user->setFirstname('Natasha');
     $user->setLastname('Romanov');
     $user->setLocation('Berlin');
-    saveUser($dbh, $user);
+    //saveUser($dbh, $user);
+    //$mapper->save($user);
 
 
 }
-catch(Exception $e) {
-    print_r($e);
+catch(PDOException $e) {
+    //print_r($e);
+    echo $e->getMessage();
 }
-
-
