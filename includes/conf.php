@@ -1,6 +1,6 @@
 <?php
 
-const DEBUG = false;
+// Vor der Verwendung muss eine boolische Konstante DEBUG deklariert werden
 
 function debug($input, ...$info) {
 
