@@ -11,6 +11,12 @@ class Parkhaus {
     function __construct(Adresse $adresse) {
         $this->adresse = $adresse;
     }
+
+    public function clearFahrzeuge(): void
+    {
+        $this->fahrzeuge = [];
+    }
+
     
     public function getAdresse(): Adresse
     {
