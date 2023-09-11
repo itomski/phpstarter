@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parkhausverwaltung</title>
-    <link rel="stylesheet" href="../bootstrap-5.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../phpstarter/bootstrap-5.3.1/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -77,6 +77,6 @@
 
 
 
-    <script src="../bootstrap-5.3.1/js/bootstrap.min.js"></script>
+    <script src="../phpstarter/bootstrap-5.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
