@@ -1,0 +1,29 @@
+[
+    {
+        "vorname": "Peter",
+        "nachname": "Parker",
+        "wohnort": "Hamburg",
+        "alter": 25,
+        "fach": "Jura",
+        "semester": 3,
+        "status": "aktiv"
+    },
+    {
+        "vorname": "Carol",
+        "nachname": "Danvers",
+        "wohnort": "Kiel",
+        "alter": 33,
+        "fach": "WiInf",
+        "semester": 2,
+        "status": "aktiv"
+    },
+    {
+        "vorname": "Bruce",
+        "nachname": "Banner",
+        "wohnort": "München",
+        "alter": 40,
+        "fach": "Mathematik",
+        "semester": 12,
+        "status": "aktiv"
+    }
+]
