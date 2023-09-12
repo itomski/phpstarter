@@ -1,9 +1,10 @@
 <?php
 
 error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 spl_autoload_register(function ($className) {
-    require_once '/beispiel2/classes/'.$className.'.php';
+    require_once 'classes/'.$className.'.php';
 });
 
 $options = [

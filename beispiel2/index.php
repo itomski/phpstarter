@@ -1,7 +1,6 @@
 <?php
 
-// CommandLineRunner hat keinen root-Ordner
-require '/beispiel2/includes/conf.php';
+require 'includes/conf.php';
 
 $mapper = new PageMapper($dbh);
 $pages = $mapper->findAll();
