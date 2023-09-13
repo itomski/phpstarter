@@ -1,12 +1,10 @@
 <?php
 
+// 1. Conf-File auf die eigenen Zugangsdaten anpassen
+// 2. Tabelle pages in der DB anlegen
+// 3. in pages ein Datensatz mit der action home anlegen 
+
 require 'includes/conf.php';
 
-$mapper = new PageMapper();
-$pages = $mapper->findAll();
-
-echo '<pre>';
-print_r($pages);
-echo '</pre>';
-
-include 'tpl/standard.php';
+$controller = new Controller();
+$controller->run();
