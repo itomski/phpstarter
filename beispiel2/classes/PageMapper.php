@@ -10,16 +10,18 @@ class PageMapper {
     // BREAD - Browse Read Edit Add Delete
 
     // TODO: Änderung auf ein Singleton
-    function __construct(PDO $dbh)
+    function __construct()
     {
-        $this->dbh = $dbh;
+        // DbHelper ist ein Singleton d.h. bei jedem Aufruf liefert es die gleiche, beireis offene Connection
+        // DbHelper::getInstance() liefert ein Objekt des Singletons (immer das gleiche)
+        $this->dbh = DbHelper::getInstance()->getConnection();
     }
 
     function insert(Page $page) {
     }
 
     function findAll(): array {
-        $sql = 'SELECT * FROM '.self::TABLE;
+        $sql = 'SELECT * FROM '.self::TABLE.' WHERE online = 1 ORDER BY navorder';
         $stmt = $this->dbh->query($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'Page');
         return $stmt->fetchAll();
