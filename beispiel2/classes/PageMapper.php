@@ -66,6 +66,7 @@ class PageMapper {
         return $stmt->fetch();
     }
 
+
     function findOneByAction(string $action): Page {
         $sql = 'SELECT * FROM '.self::TABLE.' WHERE online = 1 and action = ?';
         $stmt = $this->dbh->prepare($sql);
@@ -74,6 +75,12 @@ class PageMapper {
         return $stmt->fetch();
     }
 
+    /**
+     * Diese Methode Speicher ein Page Objekt
+     * @param Page-Objekt
+     * @return void
+     * @throws PDOException
+     */
     private function update(Page $page) {
         $sql = 'UPDATE '.self::TABLE.' SET label = ?, action = ?, headline = ?, 
                                            content = ?, online = ?, navorder = ?, template = ?
