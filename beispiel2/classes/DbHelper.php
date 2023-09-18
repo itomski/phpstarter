@@ -1,6 +1,9 @@
 <?php
 
 // Singleton (Design Pattern - Entwurfsmuster)
+
+// Utilityklassen haben nur statische Methoden 
+
 class DbHelper {
 
     static private $instance;

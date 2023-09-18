@@ -11,6 +11,21 @@ class Page {
     protected $navorder;
     protected $template;
 
+    // Das Objekt soll mit dem POST gefüllt werden
+    // d.h. wir brauchen einen Konstruktor, der ein assoziatives Array entgegennimmt
+
+    function __construct(array $data = [])
+    {
+        if($data) {
+            foreach($data as $key => $val) {
+                $setter = 'set'.ucfirst($key);
+                if(method_exists($this, $setter)) {
+                    $this->$setter($val);    
+                }
+            }
+        }
+    }
+
     /**
      * Get the value of id
      */
