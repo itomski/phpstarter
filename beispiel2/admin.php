@@ -13,6 +13,7 @@ $id = filter_input(INPUT_GET, 'id');
 
 // POST-Daten säubern
 $cleanFormData = filter_var_array($_POST, FILTER_SANITIZE_STRING);
+
 //print_r($_POST);
 //print_r($cleanFormData);
 

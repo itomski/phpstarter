@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Sep 13, 2023 at 11:32 AM
+-- Generation Time: Sep 18, 2023 at 01:59 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -43,9 +43,10 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `label`, `action`, `headline`, `content`, `online`, `navorder`, `template`) VALUES
-(1, 'Startseite', 'home', 'Herzlich Willkommen', 'Das ist das Haus von Nikigraus', 1, 2, '1col'),
+(1, 'Startseite', 'home', 'Herzlich Willkommen', 'Das ist das Haus von Nikigraus <h1>Hallo</h1>', 1, -1, '1col'),
 (2, 'Produkte', 'products', 'Unsere Produkte', 'Bla bla bla', 1, 0, '1col'),
-(3, 'Über uns', 'about', 'Bisschen über uns', 'Dies uns das...', 1, 3, '2col');
+(6, 'Kontakt', 'contact', 'Schreiben Sie uns', 'Bla bla bla', 1, 3, 'contact'),
+(7, 'blabla<br>', '@abc€', 'Moin<br>xyz<br>', 'dskahdskalh daskshdsl daskhdskdsha sd,ahaskdlh\r\nsda<strong>HHDSAK</strong>', 1, 10, 'contact');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +68,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
